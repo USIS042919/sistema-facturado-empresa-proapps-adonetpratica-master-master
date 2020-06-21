@@ -40,7 +40,7 @@ namespace proapps
                 lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("No hay Datos que mostrar", "Registros de Empleados",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

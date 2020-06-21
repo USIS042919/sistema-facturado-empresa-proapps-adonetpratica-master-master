@@ -36,10 +36,10 @@ namespace proapps
             comandosSQL.Parameters.Add("@tel", SqlDbType.Char).Value = "";
             comandosSQL.Parameters.Add("@pag", SqlDbType.Char).Value = "";
             comandosSQL.Parameters.Add("@cor", SqlDbType.Char).Value = "";
-            comandosSQL.Parameters.Add("@gastos_de_tramsportes", SqlDbType.Char).Value = "";
-            comandosSQL.Parameters.Add("@gastos_de_comida", SqlDbType.Char).Value = "";
-            comandosSQL.Parameters.Add("@gastos_de_vestimenta", SqlDbType.Char).Value = "";
-            comandosSQL.Parameters.Add("@gastos_de_ecenario", SqlDbType.Char).Value = "";
+            comandosSQL.Parameters.Add("@transporte", SqlDbType.Char).Value = "";
+            comandosSQL.Parameters.Add("@comida", SqlDbType.Char).Value = "";
+            comandosSQL.Parameters.Add("@vestimenta", SqlDbType.Char).Value = "";
+            comandosSQL.Parameters.Add("@ecenario", SqlDbType.Char).Value = "";
             comandosSQL.Parameters.Add("@mar", SqlDbType.Char).Value = "";
             comandosSQL.Parameters.Add("@pre", SqlDbType.Char).Value = "";
         }
@@ -59,9 +59,9 @@ namespace proapps
             miAdaptadorDatos.Fill(ds, "empleados");
 
 
-            comandosSQL.CommandText = "select * from gastos";
+            comandosSQL.CommandText = "select * from gasto";
             miAdaptadorDatos.SelectCommand = comandosSQL;
-            miAdaptadorDatos.Fill(ds, "gastos");
+            miAdaptadorDatos.Fill(ds, "gasto");
 
             comandosSQL.CommandText = "select * from eventos";
             miAdaptadorDatos.SelectCommand = comandosSQL;
@@ -79,6 +79,14 @@ namespace proapps
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "informe");
 
+            comandosSQL.CommandText = "select * from deposito";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "deposito");
+
+            comandosSQL.CommandText = "select * from tipopago";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "tipopago");
+
             comandosSQL.CommandText = "select categorias.categoria, eventos.idEvento, eventos.codigo, eventos.nombre, eventos.telefono, eventos.direccion, eventos.deposito from eventos inner join categorias on(categorias.idCategoria=eventos.idCategoria)";
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "eventos_categorias");
@@ -86,6 +94,10 @@ namespace proapps
             comandosSQL.CommandText = "select formas.formas, informe.idInforme, informe.codigo, informe.nombre, informe.telefono, informe.correo from informe inner join formas on(formas.idforma=informe.idforma)";
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "informe_formas");
+
+            comandosSQL.CommandText = "select tipopago.opciondepago, deposito.idDeposito, deposito.codigo, deposito.nombre, deposito.dui, deposito.total from deposito inner join tipopago on(tipopago.idTipopago=deposito.idTipopago)";
+            miAdaptadorDatos.SelectCommand = comandosSQL;
+            miAdaptadorDatos.Fill(ds, "deposito_tipopago");
 
             return ds;
         }
@@ -153,33 +165,33 @@ namespace proapps
             }
             procesarSQL(sql);
         }
-        public void mantenimiento_datos_gastos(String[] datos, String accion)
+        public void mantenimiento_datos_gasto(String[] datos, String accion)
         {
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO gastos (gastos_de_tramsportes,gastos_de_comida,gastos_de_vestimenta,gastos_de_ecenario) VALUES(@gastos_de_tramsportes,@gastos_de_comida,@gastos_de_vestimenta,@gastos_de_ecenario)";
+                sql = "INSERT INTO gasto (transporte,comida,vestimenta,ecenario) VALUES(@transporte,@comida,@vestimenta,@ecenario)";
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE gastos SET " +
-                    "gastos_de_tramsportes   = @gastos_de_tramsportes," +
-                    "gastos_de_comida        = @gastos_de_comida," +
-                    "gastos_de_vestimenta    = @gastos_de_vestimenta," +
-                    "gastos_de_ecenario      = @gastos_de_ecenario " +
-                    "WHERE idgastos = @id";
+                sql = "UPDATE gasto SET " +
+                    "transporte       = @transporte," +
+                    "comida        = @comida," +
+                    "estimenta      = @vestimenta," +
+                    "ecenario        = @ecenario " +
+                    "WHERE idGastos = @id";
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE gastos FROM gastos WHERE idgastos=@id";
+                sql = "DELETE gasto FROM gasto WHERE idGastos=@id";
             }
             comandosSQL.Parameters["@id"].Value = datos[0];
             if (accion != "eliminar")
             {
-                comandosSQL.Parameters["@gastos_de_tramsportes"].Value = datos[1];
-                comandosSQL.Parameters["@gastos_de_comida"].Value = datos[2];
-                comandosSQL.Parameters["@gastos_de_vestimenta"].Value = datos[3];
-                comandosSQL.Parameters["@gastos_de_ecenario"].Value = datos[4];
+                comandosSQL.Parameters["@transporte"].Value = datos[1];
+                comandosSQL.Parameters["@comida"].Value = datos[2];
+                comandosSQL.Parameters["@vestimenta"].Value = datos[3];
+                comandosSQL.Parameters["@ecenario"].Value = datos[4];
             }
             procesarSQL(sql);
         }
@@ -284,6 +296,36 @@ namespace proapps
             else if (accion == "eliminar")
             {
                 sql = "DELETE informe FROM formas WHERE idforma='" + datos[0] + "'";
+            }
+            procesarSQL(sql);
+        }
+
+        public void mantenimiento_datos_deposito(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO deposito (idTipopago,codigo,nombre,dui,total) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'," +
+                    "'" + datos[5] + "'" +
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE deposito SET " +
+                    "idTipopago     = '" + datos[1] + "'," +
+                    "codigo           = '" + datos[2] + "'," +
+                    "nombre           = '" + datos[3] + "'," +
+                    "dui           = '" + datos[4] + "'," +
+                    "total  = '" + datos[5] + "'" +
+                    "WHERE idDeposito  = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE deposito FROM deposito WHERE idDeposito ='" + datos[0] + "'";
             }
             procesarSQL(sql);
         }

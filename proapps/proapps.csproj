@@ -61,6 +61,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Avanzado_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avanzado_1.Designer.cs">
+      <DependentUpon>Avanzado_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avanzado_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avanzado_2.Designer.cs">
+      <DependentUpon>Avanzado_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avanzado_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avanzado_3.Designer.cs">
+      <DependentUpon>Avanzado_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="busqueda_clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,18 +110,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioAvanzados2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioAvanzados2.Designer.cs">
-      <DependentUpon>FormularioAvanzados2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioAvanzados1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioAvanzados1.Designer.cs">
-      <DependentUpon>FormularioAvanzados1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBusquedaCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     </Compile>
     <Compile Include="frmBusquedaOpciones.Designer.cs">
       <DependentUpon>frmBusquedaOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaTipoPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaTipoPagos.Designer.cs">
+      <DependentUpon>frmBusquedaTipoPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategorias.cs">
       <SubType>Form</SubType>
@@ -152,22 +164,51 @@
     <Compile Include="frmOpciones.Designer.cs">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTipopagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipopagos.Designer.cs">
+      <DependentUpon>frmTipopagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="gastos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gastos.Designer.cs">
       <DependentUpon>gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pantalla _de_carga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pantalla _de_carga.Designer.cs">
+      <DependentUpon>pantalla _de_carga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sistema_dbDataSet.cs">
-      <DependentUpon>sistema_dbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="sistema_dbDataSet.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sistema_dbDataSet.xsd</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="sistema_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistema_dbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Avanzado_1.resx">
+      <DependentUpon>Avanzado_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avanzado_2.resx">
+      <DependentUpon>Avanzado_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avanzado_3.resx">
+      <DependentUpon>Avanzado_3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="busqueda_clientes.resx">
       <DependentUpon>busqueda_clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,12 +224,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioAvanzados2.resx">
-      <DependentUpon>FormularioAvanzados2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioAvanzados1.resx">
-      <DependentUpon>FormularioAvanzados1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaCategorias.resx">
       <DependentUpon>frmBusquedaCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaOpciones.resx">
       <DependentUpon>frmBusquedaOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaTipoPagos.resx">
+      <DependentUpon>frmBusquedaTipoPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
@@ -213,19 +251,23 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTipopagos.resx">
+      <DependentUpon>frmTipopagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gastos.resx">
       <DependentUpon>gastos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pantalla _de_carga.resx">
+      <DependentUpon>pantalla _de_carga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,22 +277,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sistema_dbDataSet.xsc">
-      <DependentUpon>sistema_dbDataSet.xsd</DependentUpon>
+    <None Include="sistema_dbDataSet1.xsc">
+      <DependentUpon>sistema_dbDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="sistema_dbDataSet.xsd">
+    <None Include="sistema_dbDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sistema_dbDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>sistema_dbDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="sistema_dbDataSet.xss">
-      <DependentUpon>sistema_dbDataSet.xsd</DependentUpon>
+    <None Include="sistema_dbDataSet1.xss">
+      <DependentUpon>sistema_dbDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Release\2.jpg" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\IMG-3.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\IMG-1.jpg" />
     <Content Include="sistema_db.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -272,7 +322,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Debug\imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

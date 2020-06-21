@@ -62,7 +62,7 @@
             this.grbEdicion.Controls.Add(this.btneliminar);
             this.grbEdicion.Controls.Add(this.btnModificar);
             this.grbEdicion.Controls.Add(this.btnNuevo);
-            this.grbEdicion.Location = new System.Drawing.Point(410, 382);
+            this.grbEdicion.Location = new System.Drawing.Point(270, 381);
             this.grbEdicion.Name = "grbEdicion";
             this.grbEdicion.Size = new System.Drawing.Size(353, 97);
             this.grbEdicion.TabIndex = 14;
@@ -130,7 +130,7 @@
             this.grbDatosEmpleados.Controls.Add(this.lblnombre);
             this.grbDatosEmpleados.Controls.Add(this.txtcodigo);
             this.grbDatosEmpleados.Controls.Add(this.lblcodigo);
-            this.grbDatosEmpleados.Location = new System.Drawing.Point(78, 15);
+            this.grbDatosEmpleados.Location = new System.Drawing.Point(12, 12);
             this.grbDatosEmpleados.Name = "grbDatosEmpleados";
             this.grbDatosEmpleados.Size = new System.Drawing.Size(674, 345);
             this.grbDatosEmpleados.TabIndex = 12;
@@ -235,7 +235,7 @@
             this.grbNavegacion.Controls.Add(this.btnsiguiente);
             this.grbNavegacion.Controls.Add(this.btnanterior);
             this.grbNavegacion.Controls.Add(this.btnprimero);
-            this.grbNavegacion.Location = new System.Drawing.Point(131, 382);
+            this.grbNavegacion.Location = new System.Drawing.Point(12, 373);
             this.grbNavegacion.Margin = new System.Windows.Forms.Padding(1);
             this.grbNavegacion.Name = "grbNavegacion";
             this.grbNavegacion.Padding = new System.Windows.Forms.Padding(1);
@@ -301,11 +301,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(893, 507);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(698, 490);
             this.Controls.Add(this.grbNavegacion);
             this.Controls.Add(this.grbEdicion);
             this.Controls.Add(this.grbDatosEmpleados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "empleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "empleados";

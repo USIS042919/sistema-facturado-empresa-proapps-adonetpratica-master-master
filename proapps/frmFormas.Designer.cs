@@ -39,15 +39,14 @@
             this.btnsiguiente = new System.Windows.Forms.Button();
             this.btnanterior = new System.Windows.Forms.Button();
             this.btnprimero = new System.Windows.Forms.Button();
-            this.grbDatosformas = new System.Windows.Forms.GroupBox();
-            this.lblidforma = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.lblnombre = new System.Windows.Forms.Label();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.grdBusquedaFormas = new System.Windows.Forms.DataGridView();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.lblbuscar = new System.Windows.Forms.Label();
+            this.btnseleccionar = new System.Windows.Forms.Button();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
-            this.grbDatosformas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaFormas)).BeginInit();
             this.SuspendLayout();
             // 
             // grbEdicion
@@ -56,7 +55,7 @@
             this.grbEdicion.Controls.Add(this.btneliminar);
             this.grbEdicion.Controls.Add(this.btnModificar);
             this.grbEdicion.Controls.Add(this.btnNuevo);
-            this.grbEdicion.Location = new System.Drawing.Point(263, 209);
+            this.grbEdicion.Location = new System.Drawing.Point(317, 441);
             this.grbEdicion.Margin = new System.Windows.Forms.Padding(1);
             this.grbEdicion.Name = "grbEdicion";
             this.grbEdicion.Padding = new System.Windows.Forms.Padding(1);
@@ -74,7 +73,7 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+           
             // 
             // btneliminar
             // 
@@ -85,7 +84,7 @@
             this.btneliminar.TabIndex = 4;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            
             // 
             // btnModificar
             // 
@@ -96,7 +95,7 @@
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            
             // 
             // btnNuevo
             // 
@@ -107,7 +106,7 @@
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            
             // 
             // grbNavegacion
             // 
@@ -116,7 +115,7 @@
             this.grbNavegacion.Controls.Add(this.btnsiguiente);
             this.grbNavegacion.Controls.Add(this.btnanterior);
             this.grbNavegacion.Controls.Add(this.btnprimero);
-            this.grbNavegacion.Location = new System.Drawing.Point(10, 209);
+            this.grbNavegacion.Location = new System.Drawing.Point(64, 441);
             this.grbNavegacion.Margin = new System.Windows.Forms.Padding(1);
             this.grbNavegacion.Name = "grbNavegacion";
             this.grbNavegacion.Padding = new System.Windows.Forms.Padding(1);
@@ -143,7 +142,7 @@
             this.btnultimo.TabIndex = 3;
             this.btnultimo.Text = ">|";
             this.btnultimo.UseVisualStyleBackColor = true;
-            this.btnultimo.Click += new System.EventHandler(this.btnultimo_Click);
+           
             // 
             // btnsiguiente
             // 
@@ -154,7 +153,7 @@
             this.btnsiguiente.TabIndex = 2;
             this.btnsiguiente.Text = ">";
             this.btnsiguiente.UseVisualStyleBackColor = true;
-            this.btnsiguiente.Click += new System.EventHandler(this.btnsiguiente_Click);
+            
             // 
             // btnanterior
             // 
@@ -165,7 +164,7 @@
             this.btnanterior.TabIndex = 1;
             this.btnanterior.Text = "<";
             this.btnanterior.UseVisualStyleBackColor = true;
-            this.btnanterior.Click += new System.EventHandler(this.btnanterior_Click);
+            
             // 
             // btnprimero
             // 
@@ -176,80 +175,72 @@
             this.btnprimero.TabIndex = 0;
             this.btnprimero.Text = "|<";
             this.btnprimero.UseVisualStyleBackColor = true;
-            this.btnprimero.Click += new System.EventHandler(this.btnprimero_Click);
+           
             // 
-            // grbDatosformas
+            // btncancelar
             // 
-            this.grbDatosformas.Controls.Add(this.lblidforma);
-            this.grbDatosformas.Controls.Add(this.textBox6);
-            this.grbDatosformas.Controls.Add(this.label6);
-            this.grbDatosformas.Controls.Add(this.txtnombre);
-            this.grbDatosformas.Controls.Add(this.lblnombre);
-            this.grbDatosformas.Enabled = false;
-            this.grbDatosformas.Location = new System.Drawing.Point(10, 19);
-            this.grbDatosformas.Margin = new System.Windows.Forms.Padding(1);
-            this.grbDatosformas.Name = "grbDatosformas";
-            this.grbDatosformas.Padding = new System.Windows.Forms.Padding(1);
-            this.grbDatosformas.Size = new System.Drawing.Size(457, 166);
-            this.grbDatosformas.TabIndex = 12;
-            this.grbDatosformas.TabStop = false;
-            this.grbDatosformas.Text = "Datos de formas";
+            this.btncancelar.Location = new System.Drawing.Point(334, 407);
+            this.btncancelar.Margin = new System.Windows.Forms.Padding(1);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(77, 31);
+            this.btncancelar.TabIndex = 30;
+            this.btncancelar.Text = "CANCELAR";
+            this.btncancelar.UseVisualStyleBackColor = true;
             // 
-            // lblidforma
+            // grdBusquedaFormas
             // 
-            this.lblidforma.AutoSize = true;
-            this.lblidforma.Location = new System.Drawing.Point(12, 44);
-            this.lblidforma.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblidforma.Name = "lblidforma";
-            this.lblidforma.Size = new System.Drawing.Size(21, 13);
-            this.lblidforma.TabIndex = 12;
-            this.lblidforma.Text = "ID:";
+            this.grdBusquedaFormas.AllowUserToAddRows = false;
+            this.grdBusquedaFormas.AllowUserToDeleteRows = false;
+            this.grdBusquedaFormas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdBusquedaFormas.Location = new System.Drawing.Point(38, 49);
+            this.grdBusquedaFormas.Margin = new System.Windows.Forms.Padding(1);
+            this.grdBusquedaFormas.Name = "grdBusquedaFormas";
+            this.grdBusquedaFormas.ReadOnly = true;
+            this.grdBusquedaFormas.RowHeadersWidth = 102;
+            this.grdBusquedaFormas.RowTemplate.Height = 40;
+            this.grdBusquedaFormas.Size = new System.Drawing.Size(679, 346);
+            this.grdBusquedaFormas.TabIndex = 29;
             // 
-            // textBox6
+            // txtbuscar
             // 
-            this.textBox6.Location = new System.Drawing.Point(154, 568);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(40, 20);
-            this.textBox6.TabIndex = 9;
+            this.txtbuscar.Location = new System.Drawing.Point(118, 7);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(1);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(295, 20);
+            this.txtbuscar.TabIndex = 28;
             // 
-            // label6
+            // lblbuscar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 568);
-            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "label6";
+            this.lblbuscar.AutoSize = true;
+            this.lblbuscar.Location = new System.Drawing.Point(63, 9);
+            this.lblbuscar.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblbuscar.Name = "lblbuscar";
+            this.lblbuscar.Size = new System.Drawing.Size(54, 13);
+            this.lblbuscar.TabIndex = 27;
+            this.lblbuscar.Text = "BUSCAR:";
             // 
-            // txtnombre
+            // btnseleccionar
             // 
-            this.txtnombre.Location = new System.Drawing.Point(85, 74);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(1);
-            this.txtnombre.Multiline = true;
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(312, 64);
-            this.txtnombre.TabIndex = 3;
-            // 
-            // lblnombre
-            // 
-            this.lblnombre.AutoSize = true;
-            this.lblnombre.Location = new System.Drawing.Point(12, 74);
-            this.lblnombre.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(57, 13);
-            this.lblnombre.TabIndex = 2;
-            this.lblnombre.Text = "NOMBRE:";
+            this.btnseleccionar.Location = new System.Drawing.Point(238, 407);
+            this.btnseleccionar.Margin = new System.Windows.Forms.Padding(1);
+            this.btnseleccionar.Name = "btnseleccionar";
+            this.btnseleccionar.Size = new System.Drawing.Size(94, 31);
+            this.btnseleccionar.TabIndex = 26;
+            this.btnseleccionar.Text = "SELECCIONAR";
+            this.btnseleccionar.UseVisualStyleBackColor = true;
             // 
             // frmFormas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 301);
+            this.ClientSize = new System.Drawing.Size(747, 508);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.grdBusquedaFormas);
+            this.Controls.Add(this.txtbuscar);
+            this.Controls.Add(this.lblbuscar);
+            this.Controls.Add(this.btnseleccionar);
             this.Controls.Add(this.grbEdicion);
             this.Controls.Add(this.grbNavegacion);
-            this.Controls.Add(this.grbDatosformas);
             this.Name = "frmFormas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFormas";
@@ -257,9 +248,9 @@
             this.grbEdicion.ResumeLayout(false);
             this.grbNavegacion.ResumeLayout(false);
             this.grbNavegacion.PerformLayout();
-            this.grbDatosformas.ResumeLayout(false);
-            this.grbDatosformas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaFormas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -276,11 +267,10 @@
         private System.Windows.Forms.Button btnsiguiente;
         private System.Windows.Forms.Button btnanterior;
         private System.Windows.Forms.Button btnprimero;
-        private System.Windows.Forms.GroupBox grbDatosformas;
-        private System.Windows.Forms.Label lblidforma;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.Label lblnombre;
+        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.DataGridView grdBusquedaFormas;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.Label lblbuscar;
+        private System.Windows.Forms.Button btnseleccionar;
     }
 }

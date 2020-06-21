@@ -54,7 +54,7 @@ namespace proapps
         private void busqueda_gastos_Load_1(object sender, EventArgs e)
         {
             grdBusquedaGastos.DataSource =
-               objConexion.obtener_datos().Tables["gastos"].DefaultView;
+               objConexion.obtener_datos().Tables["gasto"].DefaultView;
         }
     }
     }

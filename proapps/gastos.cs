@@ -23,8 +23,8 @@ namespace proapps
       
         void actualizarDs()
         {
-            tbl = objConexion.obtener_datos().Tables["gastos"];
-            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idgastos"] };
+            tbl = objConexion.obtener_datos().Tables["gasto"];
+            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idGastos"] };
         }
         void mostrarDatos()
         {
@@ -38,7 +38,7 @@ namespace proapps
 
                 lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("No hay Datos que mostrar", "Registros de Gastos",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,7 +132,7 @@ namespace proapps
 
 
                 };
-                objConexion.mantenimiento_datos_gastos(valores, accion);
+                objConexion.mantenimiento_datos_gasto(valores, accion);
                 actualizarDs();
                 posicion = tbl.Rows.Count - 1;
                 mostrarDatos();
@@ -174,7 +174,7 @@ namespace proapps
          MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
             {
                 String[] valores = { lblidgastos.Text };
-                objConexion.mantenimiento_datos_gastos(valores, "eliminar");
+                objConexion.mantenimiento_datos_gasto(valores, "eliminar");
 
                 actualizarDs();
                 posicion = posicion > 0 ? posicion - 1 : 0;

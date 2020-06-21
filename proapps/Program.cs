@@ -16,7 +16,7 @@ namespace proapps
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioAvanzados1 ());
+            Application.Run(new Menu());
         }
     }
 }

@@ -65,7 +65,7 @@
             this.grbEdicion.Controls.Add(this.btneliminar);
             this.grbEdicion.Controls.Add(this.btnModificar);
             this.grbEdicion.Controls.Add(this.btnNuevo);
-            this.grbEdicion.Location = new System.Drawing.Point(379, 361);
+            this.grbEdicion.Location = new System.Drawing.Point(258, 354);
             this.grbEdicion.Margin = new System.Windows.Forms.Padding(1);
             this.grbEdicion.Name = "grbEdicion";
             this.grbEdicion.Padding = new System.Windows.Forms.Padding(1);
@@ -133,7 +133,7 @@
             this.grbNavegacion.Controls.Add(this.btnsiguiente);
             this.grbNavegacion.Controls.Add(this.btnanterior);
             this.grbNavegacion.Controls.Add(this.btnprimero);
-            this.grbNavegacion.Location = new System.Drawing.Point(131, 361);
+            this.grbNavegacion.Location = new System.Drawing.Point(10, 354);
             this.grbNavegacion.Margin = new System.Windows.Forms.Padding(1);
             this.grbNavegacion.Name = "grbNavegacion";
             this.grbNavegacion.Padding = new System.Windows.Forms.Padding(1);
@@ -212,7 +212,7 @@
             this.grbDatosElementos.Controls.Add(this.txtcodigo);
             this.grbDatosElementos.Controls.Add(this.lblcodigo);
             this.grbDatosElementos.Enabled = false;
-            this.grbDatosElementos.Location = new System.Drawing.Point(131, 17);
+            this.grbDatosElementos.Location = new System.Drawing.Point(10, 10);
             this.grbDatosElementos.Margin = new System.Windows.Forms.Padding(1);
             this.grbDatosElementos.Name = "grbDatosElementos";
             this.grbDatosElementos.Padding = new System.Windows.Forms.Padding(1);
@@ -356,11 +356,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(754, 473);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(582, 457);
             this.Controls.Add(this.grbEdicion);
             this.Controls.Add(this.grbNavegacion);
             this.Controls.Add(this.grbDatosElementos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmElementos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MANTENIMIENTO ELEMENTOS";
